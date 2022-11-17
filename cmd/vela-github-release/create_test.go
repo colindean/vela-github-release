@@ -16,7 +16,7 @@ func TestGithubRelease_Create_Command(t *testing.T) {
 	// setup types
 	c := &Create{
 		Draft:      false,
-		Files:      []string{"file"},
+		Files:      []string{"file1", "file2"},
 		Notes:      "notes",
 		NotesFile:  "notes_file",
 		Prerelease: false,
@@ -31,7 +31,8 @@ func TestGithubRelease_Create_Command(t *testing.T) {
 		releaseCmd,
 		createAction,
 		"tag",
-		"file",
+		"file1",
+		"file2",
 		fmt.Sprintf("--draft=%t", false),
 		fmt.Sprintf("--notes=%s", c.Notes),
 		fmt.Sprintf("--notes-file=%s", c.NotesFile),
